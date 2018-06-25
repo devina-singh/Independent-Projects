@@ -22,7 +22,9 @@ public class StringSimilarity {
         }
         int longerLength = longer.length();
         if (longerLength == 0) { return 1.0; /* both strings are zero length */ }
-        return (longerLength - editDistance(longer, shorter)) / (double) longerLength;
+        int ed = editDistance(longer, shorter);
+        
+        return (longerLength - ed) / (double) longerLength;
         
     }
     
@@ -59,6 +61,10 @@ public class StringSimilarity {
     public static void printSimilarity(String s, String t) {
         System.out.println(String.format(
                                          "%.3f is the similarity between \"%s\" and \"%s\"", similarity(s, t), s, t));
+    }
+
+    public static void printeditDistance(String a, String t) {
+      System.out.println(editDistance(a, t));
     }
     
     public static void main(String[] args) {

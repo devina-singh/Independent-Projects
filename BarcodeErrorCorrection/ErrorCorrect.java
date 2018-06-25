@@ -24,7 +24,7 @@ import java.io.IOException;
     
     public class ErrorCorrect  {
     
-    private static final String FILENAME = "1millbarcodes.txt";
+    private static final String FILENAME = "1mill9bases.txt";
     // his method error corrects all the barcodes in a dataset and groups
     // these barcodes together to consider how many cells can be recovered. 
     public ErrorCorrect() throws FileNotFoundException  {
@@ -34,6 +34,7 @@ import java.io.IOException;
          double similarityVal = 0.0;
          String closest = "";
          
+      
         try {
             BufferedReader br = new BufferedReader(new FileReader(FILENAME));
             String line;
@@ -41,14 +42,21 @@ import java.io.IOException;
             int index = 0;
             int longerLength = 0;
             HashMap<String, Integer> cluster = new  HashMap<String, Integer>();
+            HashSet<String> unmutatedOrig = new HashSet<String>();
             // Go through each barcode in dataset
+            
             while ((line = br.readLine() ) != null) {
+             
                 StringBuilder barc = new StringBuilder(line.substring(0,6));
+
+               
                 // No change if barcode contained in set of original barcodes
                 if (original.contains(barc.toString())) {
                     list.add(barc.toString());
+                    //System.out.println(barc.toString() + " " + '0');
                 }
                 // if barcode is mutated...
+                
                 else {
                     // find closest original barcode using Levenshtein Edit Distance
                     StringSimilarity sim = new StringSimilarity();
@@ -60,26 +68,30 @@ import java.io.IOException;
                             similarityVal = currentSim; 
                             closest = temp; } 
                    }
+
                         list.add(closest); // replace mutated barcode with closest original barcode
+                
+                        System.out.println(closest + " ");
+                        sim.printeditDistance(closest, barc.toString());
                 }
             }
 
     // place error corrected barcodes in HashMap and count their occurances 
     // This allows us to determine the number of cells 
-    String[] stringArr = list.toArray(new String[0]);
+  String[] stringArr = list.toArray(new String[0]);
     for (int i = 0; i < stringArr.length; i++) {
        if (!cluster.containsKey(stringArr[i]))
                 cluster.put(stringArr[i], 1); 
             else {
                 cluster.put(stringArr[i], cluster.get(stringArr[i])+1); }
-    }
+    } 
     // print HashMap of error corrected barcodes and their counts
     for (Map.Entry<String, Integer> entry : cluster.entrySet()) {
     String key = entry.getKey().toString();
     Integer value = entry.getValue();
-    System.out.println(key + "    " + value);
+    System.out.println(key + "    " + value); 
     
-}
+}  
     // Always close files.
             br.close();
 
