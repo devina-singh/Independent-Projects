@@ -47,16 +47,12 @@ import java.io.IOException;
             
             while ((line = br.readLine() ) != null) {
              
-                StringBuilder barc = new StringBuilder(line.substring(0,6));
-
-               
+                StringBuilder barc = new StringBuilder(line.substring(0,6));           
                 // No change if barcode contained in set of original barcodes
                 if (original.contains(barc.toString())) {
                     list.add(barc.toString());
-                    //System.out.println(barc.toString() + " " + '0');
                 }
                 // if barcode is mutated...
-                
                 else {
                     // find closest original barcode using Levenshtein Edit Distance
                     StringSimilarity sim = new StringSimilarity();
@@ -67,7 +63,7 @@ import java.io.IOException;
                         if (currentSim >= similarityVal) {
                             similarityVal = currentSim; 
                             closest = temp; } 
-                   }
+                     }
 
                         list.add(closest); // replace mutated barcode with closest original barcode
                 
