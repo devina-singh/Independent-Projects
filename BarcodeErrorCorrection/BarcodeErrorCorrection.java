@@ -21,8 +21,9 @@ public class BarcodeErrorCorrection {
     private HashMap<String, Integer> barcodes;
     private int bLen; // barcode Length
     private Queue<String> oneSub;
-     private Queue<String> oneIns;
-     private Queue<String> oneDel;
+    private Queue<String> oneIns;
+    private Queue<String> oneDel;
+ 
     /* This method places all the barcodes in the dataset as well 
      as all their possible substitution, deletion and insertion 
      mutation permutations in a HashMap along with their counts */
@@ -49,16 +50,17 @@ public class BarcodeErrorCorrection {
            
             StringBuilder extdBar = new StringBuilder(input[i].substring(0,barcodeLen + 1));
             possibleDeletion(extdBar);
-            
             StringBuilder extdBar2 = new StringBuilder(input[1]);
-        //    possibleDeletion2Mutations(extdBar2);
-           
+  
             // generate all substitution and insertion edit permutations and place them in HashMap
             possibleStrings(input[i].substring(0, barcodeLen)); 
-          //  possibleSubstitution2Mutations();
-         //   possibleInsertion2Mutations();           
-            
            
+            /* uncomment to generate two mutation permutations
+            possibleDeletion2Mutations(extdBar2);  
+            possibleSubstitution2Mutations();
+            possibleInsertion2Mutations();  */         
+            
+
             }
         for (Map.Entry<String, Integer> entry : barcodes.entrySet()) {
             String key = entry.getKey();
