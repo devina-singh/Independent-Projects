@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class ReadFile {
     // dataset file
-    private static final String FILENAME = "data4mill.txt";
+    private static final String FILENAME = "neurons_900_S1_L001_I1_001.fastq";
     
     
     public ReadFile() throws FileNotFoundException {
@@ -39,21 +39,40 @@ public class ReadFile {
             int index = 0;
             int size = 0;
             int sizeReads = 0;
+            StringBuilder str = new StringBuilder();
             // read through DNA reads in data set
             while ((line = br.readLine() ) != null) {
                 size++;
-                // Only store first million reads that don't have the character 'N' in them 
-                if ((index == 1) && (line.indexOf('N') == -1) && (sizeReads <= 1000000)) {
+                // Only store first million reads that don't have the character 'N' in them (old dataset)
+               /* if ((index == 1) && (line.indexOf('N') == -1) && (sizeReads <= 1000000)) {
+               
                     sizeReads++;
                     // barcode consists of first 7 characters of read
-                    // extra character taken for cases with deletion errors
-                    StringBuilder str = new StringBuilder(line.substring(0,8));
+                    // extra 2 characters taken for cases with deletion errors
+                    StringBuilder str = new StringBuilder(line.substring(0,9));
                     list.add(str.toString()); 
                 }
                 
                 if (index == 3) index = 0;
-                else index++;  
-            }
+                else index++;   */
+
+
+                // neurons dataset 
+                if (index==0) {
+                    String[] components = line.split(":");
+                    str = new StringBuilder (components[components.length - 1]);
+                }
+
+                if (index == 1) {
+                    str.append(line);
+                    list.add(str.toString()); 
+                }
+
+                if (index == 3) index = 0;
+                else index++;
+            } 
+
+
             
             String[] stringArr = list.toArray(new String[0]);
             // Always close files.
@@ -74,5 +93,10 @@ public class ReadFile {
         
         ReadFile rf = new ReadFile();
         String[] result = rf.read();
+        for (int i = 0; i < result.length; i++) {
+            //System.out.println("hi");
+            System.out.println(result[i]);
+        }
+        
     }
 }
