@@ -1,13 +1,13 @@
 # Independent-Projects
-## Independent CS projects in Java and Python
 
-### BarcodeErrorCorrection.java 
 
-Java program that implements a motif-finding algorithm to identify and error-correct DNA barcode tags used in single cell sequencing. The algorithm uses k-words (sequence used for pattern alignment) with an associated set of neighbors in the set of all k-letter words to identify a ‘consensus’ barcode by building hash tables to identify and record the occurance of all possible substitution, deletion and insertion error mutation permutations.  Algorithm identifies the original un-mutated barcodes in a data set of sequenced barcodes and uses the Levenshtein edit distance to determine the nearest original barcode to each mutated barcode in order to error correct the data set.
+### BarcodeErrorCorrection  
 
-Through this algorithm, we found that we were able to generate 97% of the initial barcode library in our set of original barcodes. Furthermore, by error-correcting barcodes and keeping track of their counts, we were able to recover 570 out of 589 cells that were sequenced in a previously published Drop-Seq experiment by Macosko et al. Paper to be published Fall 2018. 
+Java program that implements a motif-finding algorithm to identify and error-correct DNA barcode tags used in single cell sequencing. The algorithm uses k-words (sequence used for pattern alignment) with an associated set of neighbors in the set of all k-letter words to identify a ‘consensus’ barcode by building hash tables to identify and record the occurance of all possible substitution, deletion and insertion error mutation permutations.  
 
-### Bidder.py and Auction.py 
+Through this algorithm, we found that we were able to generate 97% of the initial barcode library in our set of original barcodes. Furthermore, by error-correcting barcodes and keeping track of their counts, we were able to recover 570 out of 589 cells that were sequenced in a previously published Drop-Seq experiment by Macosko et al. 
+
+### Bidder
 
 Python program that implements Professor Matthew Weinberg’s low regret algorithms and uses machine learning to calculate the price at which a bidder should bid at in different types of auction scenarios to secure his lowest regret. Other applications of these algorithms could include credit scoring and price determination. The program uses Seaborn to visualize the results. 
 
@@ -30,21 +30,6 @@ Features include:
 * Search functionality
 * Sharing individual posts by URL
 * Reporting posts and comments to admins
-
-
-## Images
-### Comment thread
-<img src="images/comments.png" alt="A single comment thread in TigerTalk" width="80%" height="80%">
-
-### Search results
-<img src="images/search.png" alt="Search results in TigerTalk" width="80%" height="80%">
-
-### Anonymous Posts and Comments (each user linked to a color on a post)
-<a href="https://imgur.com/xZ3WcyH"><img src="https://i.imgur.com/xZ3WcyH.png" title="source: imgur.com" width="80%" height="80%" >
-
-
-### Mobile responsive design
-<img src="images/main_mobile.jpg" alt="The main interface of mobile TigerTalk" width="30%" height="30%">	<img src="images/scrolled_mobile.jpg" alt="A series of posts in mobile TigerTalk" width="30%" height="30%">	<img src="images/comments_mobile.jpg" alt="A comment thread in mobile TigerTalk" width="30%" height="30%">
 
 ## Stack
 
