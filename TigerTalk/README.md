@@ -2,7 +2,7 @@
 
 ![Homepage of TigerTalk](images/main.png)
 
-TigerTalk is a semi-anonymous conversation and Q&A web-app, developed as the final project for COS 333: Advanced Programming Techniques taught by Brian Kernighan in Spring 2018.
+TigerTalk is a semi-anonymous conversation and Q&A web-app, designed to facilitate conversation across Princeton's student body.
 
 Features include:
 * Princeton CAS authentication
