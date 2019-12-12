@@ -1,4 +1,3 @@
-# COS 424 Final Project
 
 ## Project Setup
 
