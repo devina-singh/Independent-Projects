@@ -12,21 +12,21 @@ Consumers everywhere today are inundated with seemingly unlimited product review
 We use several different supervised learning models in order to classify each review into helpful, neutral, or unhelpful. These classification methods are: recurrent neural networks (RNN) including long short-term memory (LSTM) and bi-directional long short-term memory (BiLSTM), Random Forests (RF), and Support Vector Machine (SVM). For the last two, we use a bag-of-words representation of the reviews. We evaluate all the classifiers on their accuracy in categorizing helpfulness.
 
 
-### BarcodeErrorCorrection  
+### DNA Barcode Error Correction  
 
 Java program that implements a motif-finding algorithm to identify and error-correct DNA barcode tags used in single cell sequencing. The algorithm uses k-words (sequence used for pattern alignment) with an associated set of neighbors in the set of all k-letter words to identify a ‘consensus’ barcode by recording the occurance of all possible substitution, deletion and insertion error mutation permutations.  
 
 Through this algorithm, we were able to recover and identify 570 out of 589 cells that were sequenced in a previously published Drop-Seq experiment by Macosko et al. 
 
-### Bidder
+### Optimizing Auction Bids
 
 Python program that implements low regret algorithms and takes a machine learning approach to calculating the price at which a bidder should bid at in different types of auction scenarios to secure his or her lowest regret. Other applications of these algorithms could include credit scoring and price determination. 
 
-### Genome.java
+### Genome Assembly
 
 Java program that takes in a file of DNA sequences and then assembles the genome by identifying the strings that don't belong in the genome, removing them and calculating the overlap between the prefixes and suffixes of the remaining strings. 
 
-### TigerTalk.java
+### TigerTalk
 
 ![Homepage of TigerTalk](images/main.png)
 
