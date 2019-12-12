@@ -7,7 +7,7 @@ ScaffCC enables researchers to compile quantum applications written in Scaffold 
 
 ### Classifying Amazon Fine Food Review Helpfulness
 
-Consumers everywhere today are now inundated with seemingly unlimited product reviews  How does one parse through all of this information to make the most informed decisions? What sort of information is most relevant and helpful to consumers when making these decisions? This project uses 50,000 Amazon’s Fine Food Reviews to predict the helpfulness of a review. 
+Consumers everywhere today are inundated with seemingly unlimited product reviews  How does one parse through all of this information to make the most informed decisions? What sort of information is most relevant and helpful to consumers when making these decisions? This project uses 50,000 Amazon’s Fine Food Reviews to predict the helpfulness of a review. 
 
 We use several different supervised learning models in order to classify each review into helpful, neutral, or unhelpful. These classification methods are: recurrent neural networks (RNN) including long short-term memory (LSTM) and bi-directional long short-term memory (BiLSTM), Random Forests (RF), and Support Vector Machine (SVM). For the last two, we use a bag-of-words representation of the reviews. We evaluate all the classifiers on their accuracy in categorizing helpfulness.
 
