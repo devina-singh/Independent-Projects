@@ -1,19 +1,23 @@
 # Independent-Projects
 
+### ScaffCC
+ScaffCC is a compiler for the Scaffold programing language - with the purpose of writing and analyzing code for quantum computing applications.
+
+ScaffCC enables researchers to compile quantum applications written in Scaffold to a low-level quantum assembly format (QASM), apply error correction, and generate resource estimation metrics. It is written to be scalable up to problem sizes in which quantum algorithms outperform classical ones, and as such provide valuable insight into the overheads involved and possible optimizations for a realistic implementation on a future device technology.
 
 ### BarcodeErrorCorrection  
 
-Java program that implements a motif-finding algorithm to identify and error-correct DNA barcode tags used in single cell sequencing. The algorithm uses k-words (sequence used for pattern alignment) with an associated set of neighbors in the set of all k-letter words to identify a ‘consensus’ barcode by building hash tables to identify and record the occurance of all possible substitution, deletion and insertion error mutation permutations.  
+Java program that implements a motif-finding algorithm to identify and error-correct DNA barcode tags used in single cell sequencing. The algorithm uses k-words (sequence used for pattern alignment) with an associated set of neighbors in the set of all k-letter words to identify a ‘consensus’ barcode by recording the occurance of all possible substitution, deletion and insertion error mutation permutations.  
 
-Through this algorithm, we found that we were able to generate 97% of the initial barcode library in our set of original barcodes. Furthermore, by error-correcting barcodes and keeping track of their counts, we were able to recover 570 out of 589 cells that were sequenced in a previously published Drop-Seq experiment by Macosko et al. 
+Through this algorithm, we were able to recover and identify 570 out of 589 cells that were sequenced in a previously published Drop-Seq experiment by Macosko et al. 
 
 ### Bidder
 
-Python program that implements Professor Matthew Weinberg’s low regret algorithms and uses machine learning to calculate the price at which a bidder should bid at in different types of auction scenarios to secure his lowest regret. Other applications of these algorithms could include credit scoring and price determination. The program uses Seaborn to visualize the results. 
+Python program that implements low regret algorithms and takes a machine learning approach to calculating the price at which a bidder should bid at in different types of auction scenarios to secure his or her lowest regret. Other applications of these algorithms could include credit scoring and price determination. 
 
 ### Genome.java
 
-Java program that parses a file of DNA into 100 sequence reads and then assembles a genome by identifying the strings that don't belong in the genome, removing them and calculating the overlap between the prefixes and suffixes of the remaining strings. 
+Java program that takes in a file of DNA sequences and then assembles the genome by identifying the strings that don't belong in the genome, removing them and calculating the overlap between the prefixes and suffixes of the remaining strings. 
 
 ### TigerTalk.java
 
@@ -33,4 +37,4 @@ Features include:
 
 ## Stack
 
-TigerTalk is built on Django and the [Django REST Framework](http://www.django-rest-framework.org/), with a PostgreSQL database. The front-end is built with [React](https://reactjs.org/) and [React-Bootstrap](https://react-bootstrap.github.io/), which are compiled and bundled into a Django template using [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/). Authentication is handled by [Princeton's CAS server](https://csguide.cs.princeton.edu/publishing/cas) and [django-cas-ng](https://github.com/mingchen/django-cas-ng). TigerTalk is deployed using Heroku, although a public version of the site is currently unavailable.
+TigerTalk is built on Django and the [Django REST Framework](http://www.django-rest-framework.org/), with a PostgreSQL database. The front-end is built with [React](https://reactjs.org/) and [React-Bootstrap](https://react-bootstrap.github.io/), which are compiled and bundled into a Django template using [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/). Authentication is handled by [Princeton's CAS server](https://csguide.cs.princeton.edu/publishing/cas) and [django-cas-ng](https://github.com/mingchen/django-cas-ng). TigerTalk is deployed using Heroku.
